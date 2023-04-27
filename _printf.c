@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * _prints -  produces output according to a format.
@@ -15,7 +16,7 @@ void _prints(char *string)
 		{
 			if (string == NULL)
 			{
-				string = "(nil)";
+				exit(98);
 			}
 			_putchar(string[j]);
 		}
@@ -28,10 +29,6 @@ void _prints(char *string)
 */
 void _printc(char c)
 {
-	if (c == '\0')
-	{
-		c = ' ';
-	}
 	_putchar(c);
 }
 /**
@@ -50,7 +47,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (0);
+		exit(98);
 	}
 	va_start(argument, format);
 
