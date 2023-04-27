@@ -19,6 +19,7 @@ void _prints(char *string)
 			}
 			_putchar(string[j]);
 		}
+		 _putchar('\n');
 }
 /**
  * _printc -  produces output according to a format.
