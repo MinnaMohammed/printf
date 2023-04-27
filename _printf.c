@@ -33,6 +33,7 @@ void _printc(char c)
 		c = ' ';
 	}
 	_putchar(c);
+	_putchar('\n');
 }
 /**
  * _printf -  produces output according to a format.
