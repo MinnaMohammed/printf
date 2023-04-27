@@ -30,7 +30,6 @@ void _prints(char *string)
 void _printc(char c)
 {
 	_putchar(c);
-	_putchar('\n');
 }
 /**
  * _printf -  produces output according to a format.
@@ -70,6 +69,10 @@ int _printf(const char *format, ...)
 			else if (value == '%')
 			{
 				_putchar('%');
+			}
+			else
+			{
+				exit(98);
 			}
 			i += 2;
 		}
