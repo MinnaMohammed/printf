@@ -19,7 +19,6 @@ void _prints(char *string)
 			}
 			_putchar(string[j]);
 		}
-		 _putchar('\n');
 }
 /**
  * _printc -  produces output according to a format.
@@ -34,7 +33,6 @@ void _printc(char c)
 		c = ' ';
 	}
 	_putchar(c);
-	_putchar('\n');
 }
 /**
  * _printf -  produces output according to a format.
@@ -75,7 +73,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 			}
-			i++;
+			i += 2;
 		}
 		_putchar(format[i]);
 		i++;
