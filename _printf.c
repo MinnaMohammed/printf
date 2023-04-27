@@ -66,10 +66,9 @@ int _printf(const char *format, ...)
 			}
 			else if (value == '%')
 				_putchar('%');
-			else
+			else if (value != 'c' || value != 's' || value != 'd'|| value != 'i')
 			{
-				_putchar('\n');
-				return (-1);
+				exit(99);
 			}
 			i += 2;
 		}
