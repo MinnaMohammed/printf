@@ -71,7 +71,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 			}
 			else
-				exit(98);
+				return (-1);
 			i += 2;
 		}
 		_putchar(format[i]);
