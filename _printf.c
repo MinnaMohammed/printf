@@ -67,10 +67,9 @@ int _printf(const char *format, ...)
 				_printc(c);
 			}
 			else if (value == '%')
-			{
 				_putchar('%');
-			}
 			else
+				_putchar('\n');
 				return (-1);
 			i += 2;
 		}
