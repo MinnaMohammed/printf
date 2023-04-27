@@ -2,26 +2,16 @@
 #include <stdarg.h>
 #include "main.h"
 /**
- * _printcs -  produces output according to a format.
+ * _prints -  produces output according to a format.
  *
  *@format: a character
  *@string: a string pointer
  * Return: Always 0 (Success)
 */
-void _printcs(const char format, char *string)
+void _prints(char *string)
 {
-	int i = 0, j;
+	int j;
 
-	if (format == 'c')
-	{
-		if (string == NULL)
-		{
-			string = "(nil)";
-		}
-		_putchar(string[i]);
-	}
-	else if (format == 's')
-	{
 		for (j = 0; string[j] != '\0'; j++)
 		{
 			if (string == NULL)
@@ -30,7 +20,21 @@ void _printcs(const char format, char *string)
 			}
 			_putchar(string[j]);
 		}
+}
+/**
+ * _printc -  produces output according to a format.
+ *
+ *@format: a character
+ *@string: a string pointer
+ * Return: Always 0 (Success)
+*/
+void _printc(char c)
+{
+	if (c == '\0')
+	{
+		c = ' ';
 	}
+	_putchar(c);
 }
 /**
  * _printf -  produces output according to a format.
@@ -43,7 +47,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 	char value;
 	va_list argument;
-	char *c;
+	char c;
 	char *s;
 
 	if (format == NULL)
@@ -60,12 +64,12 @@ int _printf(const char *format, ...)
 			if (value == 's')
 			{
 				s = va_arg(argument, char *);
-				_printcs(value, s);
+				_prints(s);
 			}
 			else if (value == 'c')
 			{
-				c = va_arg(argument, char *);
-				_printcs(value, c);
+				c = va_arg(argument, int);
+				_printc(c);
 			}
 			else if (value == '%')
 			{
