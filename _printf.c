@@ -4,7 +4,6 @@
 /**
  * _prints -  produces output according to a format.
  *
- *@format: a character
  *@string: a string pointer
  * Return: Always 0 (Success)
 */
@@ -24,8 +23,7 @@ void _prints(char *string)
 /**
  * _printc -  produces output according to a format.
  *
- *@format: a character
- *@string: a string pointer
+ *@c: a character
  * Return: Always 0 (Success)
 */
 void _printc(char c)
