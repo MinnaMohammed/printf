@@ -30,6 +30,7 @@ void _prints(char *string)
 void _printc(char c)
 {
 	_putchar(c);
+	_putchar('\n');
 }
 /**
  * _printf -  produces output according to a format.
