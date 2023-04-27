@@ -29,6 +29,10 @@ void _prints(char *string)
 */
 void _printc(char c)
 {
+	if (c == '\0')
+	{
+		return (-1);
+	}
 	_putchar(c);
 }
 /**
@@ -66,7 +70,7 @@ int _printf(const char *format, ...)
 			}
 			else if (value == '%')
 				_putchar('%');
-			else if (value != 'c' || value != 's' || value != 'd'|| value != 'i')
+			else if (value != '!' || value != 'K')
 			{
 				exit(99);
 			}
