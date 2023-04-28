@@ -84,6 +84,12 @@ unsigned long int _printb(unsigned long int num)
 {
 	unsigned long int count = 0, new;
 
+	if (num == 0)
+	{
+		_putchar(num + '0');
+		return (1);
+	}
+
 	while (num != 0)
 	{
 		new = num % 2;
