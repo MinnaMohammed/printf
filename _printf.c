@@ -46,8 +46,13 @@ int _printc(char c)
 */
 int _printd(int num)
 {
-	int  count = 0;
+	int count = 0, new = num;
 
+	while (new != 0)
+	{
+		new = new / 10;
+		count++;
+	}
 	if (num < 0)
 	{
 		_putchar('-');
@@ -57,11 +62,10 @@ int _printd(int num)
 
 	if (num / 10)
 	{
-		count++;
 		_printd(num / 10);
 	}
 	_putchar(num % 10 + '0');
-	return (count + 2);
+	return (count);
 }
 /**
  * _printf -  produces output according to a format.
@@ -110,6 +114,7 @@ int _printf(const char *format, ...)
 			{
 				d = va_arg(argument, int);
 				count += _printd(d);
+				count--;
 			}
 			else if (value == '\0')
 			{
