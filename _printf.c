@@ -68,6 +68,35 @@ int _printd(int num)
 	return (count);
 }
 /**
+ * _printi -  produces output according to a format.
+ *
+ *@num: a number
+ * Return: Always 0 (Success)
+*/
+int _printi(int num)
+{
+	int count = 0, new = num;
+
+	while (new != 0)
+	{
+		new = new / 10;
+		count++;
+	}
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+		count++;
+	}
+
+	if (num / 10)
+	{
+		_printd(num / 10);
+	}
+	_putchar(num % 10 + '0');
+	return (count);
+}
+/**
  * _printf -  produces output according to a format.
  *
  *@format: a character string
@@ -81,6 +110,7 @@ int _printf(const char *format, ...)
 	char c;
 	char *s;
 	int d;
+	int i_print;
 
 	if (format == NULL)
 		exit(98);
@@ -120,6 +150,17 @@ int _printf(const char *format, ...)
 				count += _printd(d);
 				if (format[i + 2] == '\0')
 					break;	
+			}
+			else if (value == 'i')
+			{
+				i_print = va_arg(argument, int);
+				count += _printi(i_print);
+				if (format[i + 2] == '\0')
+					break;
+			}
+			else if (value == '\0')
+			{
+				exit(98);
 			}
 			else if (value != 'c' || value != 's' || value != '%' || value != '\0')
 			{
