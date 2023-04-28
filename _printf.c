@@ -74,6 +74,7 @@ int _printf(const char *format, ...)
 		 }
 		i++;
 	}
+	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
