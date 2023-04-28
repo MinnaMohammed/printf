@@ -9,6 +9,7 @@
  */
 int main(void)
 {
-	printf("%c", '\0');
+	int len =  _printf("Character:[%c]\n", 'H');
+	printf("Length:[%d]\n", len);
 	return (0);
 }

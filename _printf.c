@@ -8,9 +8,9 @@
  *@string: a string pointer
  * Return: Always 0 (Success)
 */
-void _prints(char *string)
+int _prints(char *string)
 {
-	int j;
+	int j, counter = 0;
 
 		for (j = 0; string[j] != '\0'; j++)
 		{
@@ -19,7 +19,9 @@ void _prints(char *string)
 				exit(98);
 			}
 			_putchar(string[j]);
+			counter++;
 		}
+		return (counter);
 }
 /**
  * _printc -  produces output according to a format.
@@ -27,13 +29,14 @@ void _prints(char *string)
  *@c: a character
  * Return: Always 0 (Success)
 */
-void _printc(char c)
+int _printc(char c)
 {
 	if (c == '\0')
 	{
-		return;
+		return (-1);
 	}
 	_putchar(c);
+	return (1);
 }
 /**
  * _printf -  produces output according to a format.
@@ -43,7 +46,7 @@ void _printc(char c)
 */
 int _printf(const char *format, ...)
 {
-	int i = 0;
+	int i = 0, count = 0;
 	char value;
 	va_list argument;
 	char c;
@@ -52,7 +55,6 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		exit(98);
 	va_start(argument, format);
-
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -61,21 +63,24 @@ int _printf(const char *format, ...)
 			if (value == 's')
 			{
 				s = va_arg(argument, char *);
-				_prints(s);
+				count += _prints(s);
 			}
 			else if (value == 'c')
 			{
 				c = va_arg(argument, int);
-				_printc(c);
+				count += _printc(c);
 			}
 			else if (value == '%')
-				_putchar('%');
-			else if (value != '!' || value != 'K')
 			{
-				exit(99);
+				_putchar('%');
+				count++;
 			}
+			else if (value != '!' || value != 'K')
+				count++;
 			i += 2;
 		}
+		else
+			count++;
 		_putchar(format[i]);
 		i++;
 	}

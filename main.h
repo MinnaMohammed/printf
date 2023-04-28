@@ -2,8 +2,8 @@
 #define main_h
 
 char _putchar(char c);
-void _printc(char);
-void _prints(char *);
+int _printc(char);
+int  _prints(char *);
 int _printf(const char *format, ...);
 
 
