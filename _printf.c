@@ -14,9 +14,9 @@ int _prints(char *string)
 
 		for (j = 0; string[j] != '\0'; j++)
 		{
-			if (string == NULL)
+			if (string == NULL || string == (char *)0)
 			{
-				exit(98);
+				string = "(nil)";
 			}
 			_putchar(string[j]);
 			counter++;
