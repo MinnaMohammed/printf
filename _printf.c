@@ -67,6 +67,7 @@ int _printf(const char *format, ...)
 				if (_prints(s) == 0)
 				{
 					count = 0;
+					putchar('\0');
 					exit(98);
 				}
 			}
