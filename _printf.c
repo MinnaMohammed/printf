@@ -72,6 +72,7 @@ int _printf(const char *format, ...)
 			}
 
 		 }
+		i++;
 	}
 	while (format[i] != '\0')
 	{
