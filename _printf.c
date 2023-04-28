@@ -104,11 +104,15 @@ int _printf(const char *format, ...)
 			{
 				c = va_arg(argument, int);
 				count += _printc(c);
+				if (format[i + 2] == '\0')
+					break;
 			}
 			else if (value == '%')
 			{
 				_putchar('%');
 				count++;
+				if (format[i + 2] == '\0')
+					break;
 			}
 			else if (value == 'd')
 			{
