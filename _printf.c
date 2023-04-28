@@ -12,12 +12,12 @@ int _prints(char *string)
 {
 	int j, counter = 0;
 
-		if (string == NULL)
-		{
-			return (0);
-		}
 		for (j = 0; string[j] != '\0'; j++)
 		{
+			if (string == NULL)
+			{
+				return (0);
+			}
 			_putchar(string[j]);
 			counter++;
 		}
