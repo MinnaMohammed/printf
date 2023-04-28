@@ -46,7 +46,7 @@ int _printc(char c)
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
+	int i = 0, count = 0, flag = 0;
 	char value;
 	va_list argument;
 	char c;
@@ -78,12 +78,18 @@ int _printf(const char *format, ...)
 			else
 				count++;
 			i += 2;
+			flag = 1;
 		}
 		else
 			count++;
 		_putchar(format[i]);
+		if (flag == 1 && format[i] != '\0')
+		{
+			count++;
+			flag = 0;
+		}
 		i++;
 	}
 	va_end(argument);
-	return (i);
+	return (count);
 }
