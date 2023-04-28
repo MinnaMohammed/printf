@@ -75,7 +75,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
-			else if (value != '!' || value != 'K')
+			else
 				count++;
 			i += 2;
 		}
