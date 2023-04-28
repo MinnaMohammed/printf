@@ -12,12 +12,13 @@ int _prints(char *string)
 {
 	int j, counter = 0;
 
+		if (string == NULL || string == (char *)0)
+		{
+			putchar(' ');
+			return (0);
+		}
 		for (j = 0; string[j] != '\0'; j++)
 		{
-			if (string == NULL || string == (char *)0)
-			{
-				string = "(nil)";
-			}
 			_putchar(string[j]);
 			counter++;
 		}
