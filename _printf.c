@@ -56,11 +56,11 @@ int _printd(int num)
 
 	if (num / 10)
 	{
-		_printd(num / 10);
 		count++;
+		_printd(num / 10);
 	}
 	_putchar(num % 10 + '0');
-	return (count);
+	return (count + 2);
 }
 /**
  * _printf -  produces output according to a format.
