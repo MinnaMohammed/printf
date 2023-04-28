@@ -44,9 +44,9 @@ int _printc(char c)
  *@num: a number
  * Return: Always 0 (Success)
 */
-int _printd(int num)
+long int _printd(long int num)
 {
-	int count = 0, new = num;
+	long int count = 0, new = num;
 
 	while (new != 0)
 	{
@@ -87,7 +87,7 @@ int _printf(const char *format, ...)
 	va_list argument;
 	char c;
 	char *s;
-	int d;
+	long int d;
 
 	if (format == NULL)
 		exit(98);

@@ -4,7 +4,7 @@
 char _putchar(char c);
 int _printc(char);
 int _prints(char *);
-int _printd(int);
+long int _printd(long int);
 int _printf(const char *format, ...);
 
 
