@@ -12,7 +12,7 @@ int _prints(char *string)
 {
 	int j, counter = 0;
 
-		if (string == NULL || string == (char *)0)
+		if (string == NULL)
 		{
 			return (0);
 		}
@@ -33,7 +33,7 @@ int _printc(char c)
 {
 	if (c == '\0')
 	{
-		return (-1);
+		return (0);
 	}
 	_putchar(c);
 	return (1);
@@ -55,27 +55,6 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		exit(98);
 	va_start(argument, format);
-	while (format[i] != '\0')
-	{
-		if (format[i] == '%')
-		 {
-			 value = format[i + 1];
-			 if (value == 's')
-			{
-				s = va_arg(argument, char *);
-				count += _prints(s);
-				if (_prints(s) == 0)
-				{
-					count = 0;
-					putchar('\0');
-					exit(98);
-				}
-			}
-
-		 }
-		i++;
-	}
-	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -101,6 +80,18 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
+			else if (value == '\0')
+			{
+				exit(98);
+			}
+			else if (value != 'c' || value != 's' || value != '%' || value != '\0')
+			{
+				_putchar(format[i]);
+				_putchar(value);
+				_putchar('\n');
+				count = 3;
+				break;
+			}	
 			else
 				count++;
 			i += 2;

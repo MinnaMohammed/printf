@@ -9,8 +9,8 @@
  */
 int main(void)
 {
-	int len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", NULL);
-	printf("L:[%d]\n", len);
-	
+	int len;
+	len = _printf("%K\n");
+	printf("%d", len);
 	return (0);
 }
