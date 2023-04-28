@@ -114,7 +114,6 @@ int _printf(const char *format, ...)
 			{
 				d = va_arg(argument, int);
 				count += _printd(d);
-				count--;
 			}
 			else if (value == '\0')
 			{
