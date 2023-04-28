@@ -82,7 +82,8 @@ long int _printd(long int num)
 */
 unsigned long int _printb(unsigned long int num)
 {
-	unsigned long int count = 0, new;
+	unsigned long int count = 0, new[100];
+	int i = 0, j;
 
 	if (num == 0)
 	{
@@ -92,10 +93,14 @@ unsigned long int _printb(unsigned long int num)
 
 	while (num != 0)
 	{
-		new = num % 2;
-		_putchar(new + '0');
+		new[i] = num % 2;
 		num = num / 2;
 		count++;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(new[j] + '0');
 	}
 	return (count);
 }

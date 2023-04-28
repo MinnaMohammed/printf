@@ -10,7 +10,7 @@
 int main(void)
 {
 	int len;
-	len = _printf("%s\n", "This sentence vaargs");
+	len = _printf("%b", 1024);
 	printf("[%d]\n", len);
 	return (0);
 }
