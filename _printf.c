@@ -75,6 +75,25 @@ long int _printd(long int num)
 	return (count);
 }
 /**
+ * _printb -  produces output according to a format.
+ *
+ *@num: a number
+ * Return: Always 0 (Success)
+*/
+unsigned long int _printb(unsigned long int num)
+{
+	unsigned long int count = 0, new;
+
+	while (num != 0)
+	{
+		new = num % 2;
+		_putchar(new + '0');
+		num = num / 2;
+		count++;
+	}
+	return (count);
+}
+/**
  * _printf -  produces output according to a format.
  *
  *@format: a character string
@@ -88,6 +107,7 @@ int _printf(const char *format, ...)
 	char c;
 	char *s;
 	long int d;
+	unsigned long int b;
 
 	if (format == NULL)
 		exit(98);
@@ -133,6 +153,16 @@ int _printf(const char *format, ...)
 				{
 					break;
 				}
+			}
+			else if (value == 'b')
+			{
+				b = va_arg(argument, int);
+				count += _printb(b);
+				if (format[i + 2] == '\0')
+				{
+					break;
+				}
+
 			}
 			else if (value == '\0')
 			{
