@@ -114,6 +114,8 @@ int _printf(const char *format, ...)
 			{
 				d = va_arg(argument, int);
 				count += _printd(d);
+				if (format[i + 2] == '\0')
+					break;	
 			}
 			else if (value == '\0')
 			{

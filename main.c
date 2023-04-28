@@ -10,7 +10,7 @@
 int main(void)
 {
 	int len;
-	len = _printf("%d\n", -10247645);
+	len = _printf("%d", 1024);
 	printf("[%d]", len);
 	return (0);
 }
