@@ -14,7 +14,6 @@ int _prints(char *string)
 
 		if (string == NULL || string == (char *)0)
 		{
-			putchar(' ');
 			return (0);
 		}
 		for (j = 0; string[j] != '\0'; j++)
@@ -59,12 +58,35 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
+		 {
+			 value = format[i + 1];
+			 if (value == 's')
+			{
+				s = va_arg(argument, char *);
+				count += _prints(s);
+				if (_prints(s) == 0)
+				{
+					count = 0;
+					exit(98);
+				}
+			}
+
+		 }
+	}
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%')
 		{
 			value = format[i + 1];
 			if (value == 's')
 			{
 				s = va_arg(argument, char *);
 				count += _prints(s);
+				if (_prints(s) == 0)
+				{
+					count = 0;
+					exit(98);
+				}
 			}
 			else if (value == 'c')
 			{
