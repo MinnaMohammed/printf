@@ -121,10 +121,6 @@ int _printf(const char *format, ...)
 				if (format[i + 2] == '\0')
 					break;	
 			}
-			else if (value == '\0')
-			{
-				exit(98);
-			}
 			else if (value != 'c' || value != 's' || value != '%' || value != '\0')
 			{
 				_putchar(format[i]);
