@@ -10,8 +10,7 @@
 int main(void)
 {
 	int len;
-	len = _printf("%d",INT_MIN);
+	len = _printf("%s\n", "This sentence vaargs");
 	printf("[%d]\n", len);
-	printf("[%d,%i]\n",INT_MAX,INT_MAX);
 	return (0);
 }

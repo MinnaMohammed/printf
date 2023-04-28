@@ -11,13 +11,13 @@
 int _prints(char *string)
 {
 	int j, counter = 0;
+		if (string  == 	NULL)
+		{
+			return (0);
+		}
 
 		for (j = 0; string[j] != '\0'; j++)
 		{
-			if (string == NULL)
-			{
-				return (0);
-			}
 			_putchar(string[j]);
 			counter++;
 		}
@@ -137,6 +137,14 @@ int _printf(const char *format, ...)
 			else if (value == '\0')
 			{
 				exit(98);
+			}
+			else if (value != 'c' || value != 's' || value != '%' || value != '\0')
+			{
+				_putchar(format[i]);
+				_putchar(value);
+				_putchar('\n');
+				count = 3;
+				break;
 			}
 			else
 				count++;
