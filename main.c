@@ -10,7 +10,8 @@
 int main(void)
 {
 	int len;
-	len = _printf("%d", 0);
-	printf("[%d]", len);
+	len = _printf("%d", -1232);
+	printf("[%d]\n", len);
+	printf("[%d,%i]\n",INT_MAX,INT_MAX);
 	return (0);
 }

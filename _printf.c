@@ -50,6 +50,10 @@ int _printd(int num)
 
 	while (new != 0)
 	{
+		if (new < 0)
+		{
+			new = -new;
+		}
 		new = new / 10;
 		count++;
 	}
