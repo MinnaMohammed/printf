@@ -80,9 +80,10 @@ long int _printd(long int num)
  *@num: a number
  * Return: Always 0 (Success)
 */
-unsigned long int _printb(unsigned long int num)
+unsigned long int _printb(long int num)
 {
-	unsigned long int count = 0, new[100];
+	unsigned long int count = 0;
+	long int new[100];
 	int i = 0, j;
 
 	if (num == 0)
@@ -129,7 +130,7 @@ int _printf(const char *format, ...)
 	char c;
 	char *s;
 	long int d;
-	unsigned long int b;
+	long int b;
 
 	if (format == NULL)
 		exit(98);
