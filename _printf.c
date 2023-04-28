@@ -52,6 +52,7 @@ int _printd(int num)
 	{
 		_putchar('-');
 		num = -num;
+		count++;
 	}
 
 	if (num / 10)
