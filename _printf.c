@@ -112,34 +112,32 @@ int _printf(const char *format, ...)
 				c = va_arg(argument, int);
 				count += _printc(c);
 				if (format[i + 2] == '\0')
+				{
 					break;
+				}
 			}
 			else if (value == '%')
 			{
 				_putchar('%');
 				count++;
 				if (format[i + 2] == '\0')
+				{
 					break;
+				}
 			}
 			else if (value == 'd' || value == 'i')
 			{
 				d = va_arg(argument, int);
 				count += _printd(d);
 				if (format[i + 2] == '\0')
-					break;	
+				{
+					break;
+				}
 			}
 			else if (value == '\0')
 			{
 				exit(98);
 			}
-			else if (value != 'c' || value != 's' || value != '%' || value != '\0')
-			{
-				_putchar(format[i]);
-				_putchar(value);
-				_putchar('\n');
-				count = 3;
-				break;
-			}	
 			else
 				count++;
 			i += 2;
