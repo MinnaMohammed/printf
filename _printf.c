@@ -59,12 +59,15 @@ int _printd(int num)
 		num = -num;
 		count++;
 	}
-
 	if (num / 10)
 	{
 		_printd(num / 10);
 	}
 	_putchar(num % 10 + '0');
+	if (num == 0)
+	{
+		return (0);
+	}
 	return (count);
 }
 /**
