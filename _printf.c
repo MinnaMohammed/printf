@@ -66,7 +66,7 @@ int _printd(int num)
 	_putchar(num % 10 + '0');
 	if (num == 0)
 	{
-		return (0);
+		return (1);
 	}
 	return (count);
 }
