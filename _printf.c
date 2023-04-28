@@ -41,7 +41,7 @@ int _printc(char c)
 /**
  * _printd -  produces output according to a format.
  *
- *@string: a string pointer
+ *@num: a number
  * Return: Always 0 (Success)
 */
 int _printd(int num)
@@ -75,6 +75,7 @@ int _printf(const char *format, ...)
 	va_list argument;
 	char c;
 	char *s;
+	int d;
 
 	if (format == NULL)
 		exit(98);
