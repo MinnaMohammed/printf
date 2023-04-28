@@ -31,7 +31,7 @@ void _printc(char c)
 {
 	if (c == '\0')
 	{
-		exit(98);
+		return;
 	}
 	_putchar(c);
 }

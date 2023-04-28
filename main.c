@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-	printf("%");
+	printf("%c", '\0');
 	return (0);
 }
