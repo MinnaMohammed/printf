@@ -91,6 +91,11 @@ unsigned long int _printb(unsigned long int num)
 		return (1);
 	}
 
+	if (num < 0)
+	{
+		num = -num;
+	}
+
 	while (num != 0)
 	{
 		new[i] = num % 2;
