@@ -84,7 +84,7 @@ unsigned long int _printb(long int num)
 {
 	unsigned long int count = 0;
 	long int new[100];
-	int i = 0, j;
+	int i = 0, j, flag = 0;
 
 	if (num == 0)
 	{
@@ -112,6 +112,22 @@ unsigned long int _printb(long int num)
 	}
 	for (j = i - 1; j >= 0; j--)
 	{
+		if (flag == 1)
+		 {
+			 if (new[j] == 1)
+			 {
+				 new[j] = 0;
+				 _putchar(new[j] + '0');
+			 }
+			 else
+			 {
+				 new[j] = 1;
+				 _putchar(new[j] + '0');
+			 }
+		 }
+		else if (new[j] == 1)
+			flag = 1;
+		else
 		_putchar(new[j] + '0');
 	}
 	return (count);
