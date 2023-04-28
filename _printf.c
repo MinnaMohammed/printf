@@ -96,6 +96,12 @@ unsigned long int _printb(unsigned long int num)
 		num = -num;
 	}
 
+	if (num == 1)
+	{
+		_putchar(num + '0');
+		return (1);
+	}
+
 	while (num != 0)
 	{
 		new[i] = num % 2;
