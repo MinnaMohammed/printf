@@ -39,6 +39,30 @@ int _printc(char c)
 	return (1);
 }
 /**
+ * _printd -  produces output according to a format.
+ *
+ *@string: a string pointer
+ * Return: Always 0 (Success)
+*/
+int _printd(int num)
+{
+	int  count = 0;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+	}
+
+	if (num / 10)
+	{
+		_printd(num / 10);
+		count++;
+	}
+	_putchar(num % 10 + '0');
+	return (count);
+}
+/**
  * _printf -  produces output according to a format.
  *
  *@format: a character string
@@ -79,6 +103,11 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				count++;
+			}
+			else if (value == 'd')
+			{
+				d = va_arg(argument, int);
+				count += _printd(d);
 			}
 			else if (value == '\0')
 			{
