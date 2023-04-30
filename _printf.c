@@ -168,7 +168,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			else if (value == 'd' || value == 'i')
+			else if (value == 'd' || value == 'i' || value == 'u')
 			{
 				d = va_arg(argument, int);
 				count += _printd(d);
